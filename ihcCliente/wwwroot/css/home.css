@@ -1,0 +1,206 @@
+/* Reset básico para garantir consistência entre os navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho (navbar) */
+header {
+    background-color: #ffffff;
+    border-bottom: 2px solid #4CAF50;
+}
+
+.navbar {
+    padding: 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4CAF50;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-size: 1.1rem;
+    color: #333;
+    text-transform: capitalize;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #4CAF50;
+}
+
+/* Título da página */
+h1.display-4 {
+    color: #4CAF50;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 30px;
+    margin: 0 100px; /* Adiciona margem de 20px à esquerda e à direita */
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* Estilo para a área de conteúdo */
+.container {
+    max-width: 1200px;
+    margin: 0 100px; /* Adiciona margem de 20px à esquerda e à direita */
+    padding: 20px;
+    /* Garantir que a .container não ultrapasse a largura máxima */
+}
+
+/* Classe para centralizar o formulário */
+.form-centralizado {
+    margin: 100%; /* Isso centraliza o formulário horizontalmente */
+    background-color: #fff;
+    border-radius: 8px; /* Bordas arredondadas */
+    margin-top: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar */
+}
+
+/* Rodapé */
+footer {
+    background-color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    border-top: 2px solid #4CAF50;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para as mensagens no conteúdo principal */
+.text-center p {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0 100px; /* Adiciona margem de 20px à esquerda e à direita */
+}
+
+/* Links */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+ a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos gerais para botões */
+a.btn {
+    text-decoration: none; /* Remover sublinhado do link */
+    display: inline-block; /* Garantir que o link se comporte como botão */
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 5px; /* Bordas arredondadas */
+    text-align: center;
+}
+
+/* Botão de editar */
+a.btn-editar {
+    background-color: #28a745; /* Cor verde para editar */
+    color: white;
+    border: none;
+}
+
+a.btn-editar:hover {
+    background-color: #218838; /* Cor mais escura ao passar o mouse */
+}
+
+/* Botão de criar */
+a.btn-criar {
+    background-color: #28a745; /* Cor verde para criar */
+    color: white;
+    border: none;
+}
+
+a.btn-criar:hover {
+    background-color: #218838; /* Cor mais escura ao passar o mouse */
+}
+
+/* Botão de detalhes */
+a.btn-detalhes {
+    background-color: #007bff; /* Cor azul para detalhes */
+    color: white;
+    border: none;
+}
+
+a.btn-detalhes:hover {
+    background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+}
+
+/* Botão de excluir */
+a.btn-deletar {
+    background-color: #dc3545; /* Cor vermelha para excluir */
+    color: white;
+    border: none;
+}
+
+/* Estilo do botão Voltar */
+a.btn-voltar {
+    background-color: #17a2b8; /* Azul claro para voltar */
+    color: white;
+}
+
+a.btn-voltar:hover {
+    background-color: #138496; /* Tom mais escuro de azul claro quando passar o mouse */
+}
+
+a.btn-deletar:hover {
+    background-color: #c82333; /* Cor mais escura ao passar o mouse */
+}
+
+/* Foco nos botões */
+a.btn:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+th {
+    color: #000;
+}
+.detalhe {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Estilo para seções de descrição */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+ul li strong {
+    color: #4CAF50;
+}

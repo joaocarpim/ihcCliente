@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ihcCliente.Models.ItemVenda>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cadastro Item Venda</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-criar">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Produto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Venda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecoUnitario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Produto.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Venda.VendaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecoUnitario)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-editar" asp-route-id="@item.ItemVendaId">Editar</a>
+                <a asp-action="Details" class="btn btn-detalhes" asp-route-id="@item.ItemVendaId">Detalhes</a>
+                <a asp-action="Delete" class="btn btn-deletar" asp-route-id="@item.ItemVendaId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

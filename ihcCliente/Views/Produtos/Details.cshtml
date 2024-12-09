@@ -1,0 +1,40 @@
+﻿@model ihcCliente.Models.Produto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="detalhe">
+    <h1>Detalhes</h1>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Estoque)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Estoque)
+        </dd>
+    </dl>
+    <div>
+        <a asp-action="Edit" class="btn btn-editar" style="width: 100%; margin-bottom:5px;" asp-route-id="@Model?.ProdutoId">Editar</a>
+        <a asp-action="Index" class="btn btn-voltar" style="width: 100%;">Voltar</a>
+    </div>
+</div>

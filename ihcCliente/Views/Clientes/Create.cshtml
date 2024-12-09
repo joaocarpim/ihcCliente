@@ -1,0 +1,126 @@
+﻿@model ihcCliente.Models.Cliente
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" class="form-centralizado">
+            <h1>Criar Clientes</h1>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomeCompleto" class="control-label"></label>
+                <input asp-for="NomeCompleto" class="form-control" />
+                <span asp-validation-for="NomeCompleto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataNascimento" class="control-label"></label>
+                <input asp-for="DataNascimento" class="form-control" />
+                <span asp-validation-for="DataNascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RG" class="control-label"></label>
+                <input asp-for="RG" class="form-control" />
+                <span asp-validation-for="RG" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CPF" class="control-label"></label>
+                <input asp-for="CPF" class="form-control" />
+                <span asp-validation-for="CPF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoCivil" class="control-label"></label>
+                <input asp-for="EstadoCivil" class="form-control" />
+                <span asp-validation-for="EstadoCivil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomePai" class="control-label"></label>
+                <input asp-for="NomePai" class="form-control" />
+                <span asp-validation-for="NomePai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeMae" class="control-label"></label>
+                <input asp-for="NomeMae" class="form-control" />
+                <span asp-validation-for="NomeMae" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="CEP" class="control-label"></label>
+                <input asp-for="CEP" class="form-control" />
+                <span asp-validation-for="CEP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Logradouro" class="control-label"></label>
+                <input asp-for="Logradouro" class="form-control" />
+                <span asp-validation-for="Logradouro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bairro" class="control-label"></label>
+                <input asp-for="Bairro" class="form-control" />
+                <span asp-validation-for="Bairro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Localidade" class="control-label"></label>
+                <input asp-for="Localidade" class="form-control" />
+                <span asp-validation-for="Localidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Complemento" class="control-label"></label>
+                <input asp-for="Complemento" class="form-control" />
+                <span asp-validation-for="Complemento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UF" class="control-label"></label>
+                <input asp-for="UF" class="form-control" />
+                <span asp-validation-for="UF" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+            </div>
+
+            <div>
+                <a asp-action="Index" class="btn btn-voltar" style="width: 100%;">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+            $('#CEP').on('input', function () {
+                var value = $(this).val().replace(/\D/g, '');
+                if (value.length > 5) {
+                    value = value.slice(0, 5) + '-' + value.slice(5);
+                }
+                $(this).val(value);
+            });
+
+            $('#CEP').on('blur', function () {
+                var cep = $(this).val().replace(/\D/g, '');
+                if (cep.length === 8) {
+                    $.getJSON(`https://viacep.com.br/ws/${cep}/json/`, function (data) {
+                        if (!data.erro) {
+                            $('#Logradouro').val(data.logradouro || '');
+                            $('#Bairro').val(data.bairro || '');
+                            $('#Localidade').val(data.localidade || '');
+                            $('#UF').val(data.uf || '');
+                        } else {
+                            $('#Logradouro, #Bairro, #Localidade, #UF').val('');
+                            alert('CEP não encontrado.');
+                        }
+                    }).fail(function () {
+                        alert('Erro ao buscar o CEP.');
+                    });
+                }
+            });
+        });
+    </script>
+}

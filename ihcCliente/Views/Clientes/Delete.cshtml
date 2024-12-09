@@ -1,0 +1,98 @@
+﻿@model ihcCliente.Models.Cliente
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div>
+    <form asp-action="Delete" class="form-centralizado" style="margin-left:10%;">
+        <h1>Deletar</h1>
+
+        <h3>Tem certeza de que deseja excluir isto?</h3>
+        
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NomeCompleto)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NomeCompleto)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DataNascimento)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.RG)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.RG)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CPF)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CPF)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.EstadoCivil)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.EstadoCivil)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NomePai)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NomePai)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NomeMae)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NomeMae)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Logradouro)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Logradouro)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Bairro)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Bairro)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Localidade)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Localidade)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Complemento)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Complemento)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.UF)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.UF)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CEP)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CEP)
+            </dd>
+        </dl>
+        <input type="hidden" asp-for="ClienteId" />
+        <input type="submit" value="Deletar" class="btn btn-danger" /> 
+        <a asp-action="Index" class="btn btn-voltar" style="width: 100%;">Voltar</a>
+    </form>
+</div>
